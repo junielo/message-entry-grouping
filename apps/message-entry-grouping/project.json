@@ -1,0 +1,68 @@
+{
+  "name": "message-entry-grouping",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "message-entry-grouping",
+  "sourceRoot": "apps/message-entry-grouping/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/message-entry-grouping",
+        "index": "apps/message-entry-grouping/src/index.html",
+        "browser": "apps/message-entry-grouping/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/message-entry-grouping/tsconfig.app.json",
+        "assets": [
+          "apps/message-entry-grouping/src/favicon.ico",
+          "apps/message-entry-grouping/src/assets"
+        ],
+        "styles": ["apps/message-entry-grouping/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "message-entry-grouping:build:production"
+        },
+        "development": {
+          "buildTarget": "message-entry-grouping:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "message-entry-grouping:build"
+      }
+    }
+  }
+}
