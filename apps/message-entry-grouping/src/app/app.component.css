@@ -1,0 +1,47 @@
+.my-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.my-heading {
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.my-message-container {
+    height: 1px;
+    max-width: 60%;
+    min-width: 40%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-message {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.my-message-item {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.my-input-container {
+    max-width: 60%;
+    min-width: 40%;
+}
+
+.my-input-content {
+    display: flex;
+    gap: 15px;
+}
+
+.my-input-field {
+    flex-grow: 1;
+}

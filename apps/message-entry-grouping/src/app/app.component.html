@@ -1,2 +1,26 @@
-<message-entry-grouping-nx-welcome></message-entry-grouping-nx-welcome>
-<router-outlet></router-outlet>
+<div class="my-container">
+    <h1 class="my-heading">Chat Message Grouping AI</h1>
+    <div class="my-message-container">
+      <div class="my-message">
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item *ngFor="let message of chatMessages">
+              <div class="my-message-item">
+                {{ message }}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </div>
+    </div>
+    <div class="my-input-container">
+      <mat-card-content class="my-input-content">
+        <mat-form-field class="my-input-field">
+            <input matInput placeholder="Type your message">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
+        <button mat-raised-button color="warn" (click)="clearMessages()">Clear</button>
+      </mat-card-content>
+    </div>
+  </div>
+  
